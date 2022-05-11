@@ -21,15 +21,24 @@ router.get("/", (req, res) => {
   })
     .then(dbPostData => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
-      res.render("dashboard", {
+      res.render("dashboard-home", {
         posts,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        layout: "dashboard"
       });
     })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
+});
+
+router.get("/new", (req, res) => {
+  if (req.session.loggedIn) {
+    res.render("new-post");
+  }
+
+  res.render("/login");
 });
 
 module.exports = router;
