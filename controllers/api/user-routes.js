@@ -108,6 +108,7 @@ router.post("/logout", (req, res) => {
 // update a user
 router.put("/:id", (req, res) => {
   User.update(req.body, {
+    individualHooks: true,
     where: {
       id: req.params.id
     }
