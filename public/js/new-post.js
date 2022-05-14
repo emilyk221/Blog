@@ -1,16 +1,26 @@
-function newPostFormHandler(event) {
+async function newPostFormHandler(event) {
   event.preventDefault();
 
-  const response = await fetch("/api/posts/new", {
-    method: "get"
-  });
+  const title = document.querySelector("#post-title").value.trim();
+  const content = document.querySelector("#post-content").value.trim();
 
-  if (response.ok) {
-    document.location.replace("/new-post");
-  }
-  else {
-    alert(response.statusText);
+  if (title && content) {
+    const response = await fetch("/api/posts", {
+      method: "post",
+      body: JSON.stringify({
+        title,
+        content
+      }),
+      headers: { "Content-Type": "application/json" }
+    });
+
+    if (response.ok) {
+      document.location.replace("/dashboard");
+    }
+    else {
+      alert(response.statusText);
+    }
   }
 }
 
-document.querySelector("#new-post").addEventListener("click", newPostFormHandler)
+document.querySelector(".create-post-form").addEventListener("submit", newPostFormHandler);

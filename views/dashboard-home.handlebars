@@ -1,5 +1,26 @@
+{{#if loggedIn}}
+<ol class="post-list">
+  {{#each posts as |post|}}
+  <li>
+    <article class="post">
+      <div class="post-title">
+        <a href="/post/{{id}}"><h3>{{title}}</h3></a>
+        <p>Posted by {{user.username}} on {{created_at}}</p>
+      </div>
+    </article>
+  </li>
+  {{/each}}
+</ol>
+{{/if}}
+
 <div class="new-post">
   <button id="new-post">+ New Post</button>
 </div>
 
-<script src="/js/new-post.js"></script>
+<script>
+  document.querySelector("#new-post").addEventListener("click", function (event) {
+  event.preventDefault();
+  
+  document.location.replace("/dashboard/new");
+  });
+</script>

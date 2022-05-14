@@ -34,11 +34,12 @@ router.get("/", (req, res) => {
 });
 
 router.get("/new", (req, res) => {
-  if (req.session.loggedIn) {
-    res.render("new-post");
+  if (!req.session.loggedIn) {
+    res.redirect("/login");
+    return;
   }
 
-  res.render("/login");
+  res.render("new-post", {layout: "dashboard"});
 });
 
 module.exports = router;
