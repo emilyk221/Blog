@@ -1,7 +1,7 @@
 <article class="post">
   <div class="post-title">
     <h3>{{post.title}}</h3>
-    <p>Posted by {{post.user.username}} on {{post.created_at}}</p>
+    <p>Posted by {{post.user.username}} on {{format_date post.created_at}}</p>
   </div>
   <div class="post-content">
     <p>{{post.content}}</p>
@@ -12,7 +12,7 @@
   {{#each post.comments}}
   <section class="comment">
     <div class="meta">
-      {{user.username}} on {{created_at}}
+      {{user.username}} on {{format_date created_at}}
     </div>
     <div class="text">
       {{comment_text}}
