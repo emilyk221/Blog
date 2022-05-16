@@ -1,10 +1,15 @@
 <ol class="post-list">
   {{#each posts as |post|}}
-  <li>
+  <li class="list-item list-group">
     <article class="post">
-      <div class="post-title">
-        <a href="/post/{{id}}"><h3>{{title}}</h3></a>
-        <p>Posted by {{user.username}} on {{format_date created_at}}</p>
+      <div class="post-title card">
+        <a href="/post/{{id}}">
+          <div class="card-header flex-row justify-space-between">
+            <h3>{{title}}</h3>
+            <p>Posted by {{user.username}} on {{format_date created_at}}</p>
+          </div>
+        </a>
+        <p class="card-body">{{content}}</p>
       </div>
     </article>
   </li>

@@ -29,7 +29,7 @@ h5,
 h6 {
   font-weight: 700;
   margin: 0;
-  color: var(--dark);
+  color: var(--primary);
   line-height: 1.25;
 }
 
@@ -40,6 +40,10 @@ main {
 
 p {
   font-size: 1.2rem;
+}
+
+a {
+  text-decoration: none;
 }
 
  .btn {
@@ -54,7 +58,6 @@ p {
   border: none;
   outline: none;
   background-color: var(--light-dark);
-  box-shadow: 3px 3px var(--dark);
   transform: translate(-1px, -1px);
 }
 
@@ -74,8 +77,7 @@ p {
   color: var(--primary);
   border: none;
   outline: none;
-  background-color: var(--light-dark);
-  box-shadow: 3px 3px var(--secondary);
+  background-color: var(--dark);
   transform: translate(-1px, -1px);
   display: inline-block;
   width: auto;
@@ -112,6 +114,13 @@ p {
   box-shadow: 6px 5px var(--light-dark);
 }
 
+#post-title {
+  color: var(--secondary);
+  background-color: var(--light-dark);
+  border-radius: var(--border-radius);
+  padding: 0 15px;
+}
+
 .list-group {
   padding: 0;
   list-style: none;
@@ -121,14 +130,14 @@ p {
   margin-bottom: 10px;
   padding: 1.5%;
   border-radius: var(--border-radius);
-  background-color: var(--light-dark);
-  color: var(--primary);
+  background-color: var(--primary);
+  color: var(--very-dark);
   text-decoration: none;
 }
 
-.list-item:hover {
+/* .list-item:hover {
   background-color: var(--dark);
-}
+} */
 
 .status-icon {
   padding: 2px 5px;
@@ -155,7 +164,7 @@ p {
 .card-header {
   color: var(--primary);
   background-color: var(--dark);
-  padding: 2.5%;
+  padding: 15px;
   border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
 }
 
@@ -175,10 +184,11 @@ p {
   margin: 0 0 0 5px;
 }
 
-.form-input {
+.form-input,
+.form-textarea {
   width: 100%;
-  padding: 3%;
-  margin: 5px 0;
+  padding: 1%;
+  margin: 10px 0;
   font-size: 1.2rem;
   border: 2px solid var(--light-dark);
   border-radius: var(--border-radius);

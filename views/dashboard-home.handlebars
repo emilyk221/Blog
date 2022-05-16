@@ -1,10 +1,13 @@
 {{#if loggedIn}}
 <ol class="post-list">
   {{#each posts as |post|}}
-  <li>
+  <li class="list-item list-group">
     <article class="post">
-      <div class="post-title">
-        <a href="/post/{{id}}"><h3>{{title}} {{format_date created_at}}</h3></a>
+      <div id="post-title">
+        <a href="/dashboard/edit/{{id}}" class="flex-row justify-space-between">
+          <p>{{title}}</p>
+          <p>{{format_date created_at}}</p>
+        </a>
       </div>
     </article>
   </li>
@@ -12,8 +15,8 @@
 </ol>
 {{/if}}
 
-<div class="new-post">
-  <button id="new-post">+ New Post</button>
+<div class="new-post justify-content-center">
+  <button class="btn-back" id="new-post">+ New Post</button>
 </div>
 
 <script>

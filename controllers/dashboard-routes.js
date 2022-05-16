@@ -38,7 +38,7 @@ router.get("/", withAuth, (req, res) => {
 });
 
 router.get("/new", withAuth, (req, res) => {
-  res.render("new-post", {layout: "dashboard"});
+  res.render("new-post", {loggedIn: true, layout: "dashboard"});
 });
 
 router.get("/edit/:id", withAuth, (req, res) => {
