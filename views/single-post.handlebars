@@ -1,20 +1,20 @@
-<article class="post">
-  <div class="post-title">
+<article class="post card">
+  <div class="post-title card-header flex-row justify-space-between">
     <h3>{{post.title}}</h3>
     <p>Posted by {{post.user.username}} on {{format_date post.created_at}}</p>
   </div>
-  <div class="post-content">
+  <div class="post-content card-body">
     <p>{{post.content}}</p>
   </div>
 </article>
 
 <div class="comments">
   {{#each post.comments}}
-  <section class="comment">
-    <div class="meta">
+  <section class="comment card">
+    <div class="meta card-header">
       {{user.username}} on {{format_date created_at}}
     </div>
-    <div class="text">
+    <div class="text card-body">
       {{comment_text}}
     </div>
   </section>
@@ -22,15 +22,14 @@
 </div>
 
 {{#if loggedIn}}
-<form class="comment-form">
-  <div>
+<form class="comment-form card">
+  <div class="card-header">
     <h4>Comment</h4>
   </div>
-  <div>
-    <textarea name="comment-text"></textarea>
-  </div>
+  <div class="card-body">
+    <label for="comment-text">Comment</label>
+    <textarea name="comment-text" id="comment-text" class="form-textarea"></textarea>
 
-  <div>
     <button type="submit" class="btn">Submit</button>
   </div>
 </form>

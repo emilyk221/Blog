@@ -28,7 +28,6 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  margin: 0;
   color: var(--primary);
   line-height: 1.25;
 }
@@ -114,11 +113,21 @@ a {
   box-shadow: 6px 5px var(--light-dark);
 }
 
-#post-title {
+.post-title {
   color: var(--secondary);
   background-color: var(--light-dark);
   border-radius: var(--border-radius);
   padding: 0 15px;
+}
+
+#dashboard-title,
+#tech-blog-title,
+.nav-item {
+  color: var(--dark);
+}
+
+.navbar {
+  margin: 0;
 }
 
 .list-group {

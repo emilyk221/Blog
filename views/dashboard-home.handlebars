@@ -1,9 +1,9 @@
 {{#if loggedIn}}
-<ol class="post-list">
+<ol class="post-list list-group">
   {{#each posts as |post|}}
   <li class="list-item list-group">
     <article class="post">
-      <div id="post-title">
+      <div class="post-title">
         <a href="/dashboard/edit/{{id}}" class="flex-row justify-space-between">
           <p>{{title}}</p>
           <p>{{format_date created_at}}</p>

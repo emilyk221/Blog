@@ -1,12 +1,12 @@
-<ol class="post-list">
+<ol class="post-list list-group">
   {{#each posts as |post|}}
   <li class="list-item list-group">
-    <article class="post">
-      <div class="post-title card">
+    <article class=" card">
+      <div>
         <a href="/post/{{id}}">
           <div class="card-header flex-row justify-space-between">
             <h3>{{title}}</h3>
-            <p>Posted by {{user.username}} on {{format_date created_at}}</p>
+            <h5>Posted by {{user.username}} on {{format_date created_at}}</h5>
           </div>
         </a>
         <p class="card-body">{{content}}</p>

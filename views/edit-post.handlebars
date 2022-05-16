@@ -1,16 +1,18 @@
-<article>
-  <h2>
+<article class="card">
+  <h2 class="card-header">
     Edit Post
   </h2>
-  <form class="edit-post-form">
+  <form class="edit-post-form card-body">
     <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
+      <label for="post-title">Title</label>
+      <input name="post-title" id="post-title" type="text" class="form-input" value="{{post.title}}" />
     </div>
     <div>
-      <input name="post-content" type="text" value="{{post.content}}" />
+      <label for="post-content">Content</label>
+      <textarea name="post-content" id="post-content" class="form-textarea">{{post.content}}</textarea>
     </div>
-    <button type="submit" class="btn">Update post</button>
-    <button type="button" class="btn delete-post-btn">Delete post</button>
+    <button type="submit" class="btn">Update Post</button>
+    <button type="button" class="btn delete-post-btn">Delete</button>
   </form>
 </article>
 
