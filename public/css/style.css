@@ -126,6 +126,10 @@ a {
   color: var(--dark);
 }
 
+#blog-post-title {
+  color: var(--primary);
+}
+
 .navbar {
   margin: 0;
 }

@@ -14,7 +14,7 @@
         <li class="list-item"><a href="/" class="nav-item">Home</a></li>
         <li class="list-item"><a href="/dashboard" class="nav-item">Dashboard</a></li>
         <li class="list-item"><a href="/login" class="nav-item">Login</a></li>
-        <li class="list-item"><a href="#" id="logout-link" class="nav-item">Logout</a></li>
+        <li class="list-item"><a href="/" id="logout-link" class="nav-item">Logout</a></li>
       </ul>
     </nav>
     <header class="hero">
@@ -25,6 +25,8 @@
       {{{body}}}
     </main>
 
-    <script src="js/logout.js"></script>
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
   </body>
 </html>
