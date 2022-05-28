@@ -4,7 +4,10 @@ async function signupFormHandler(event) {
   const username = document.querySelector("#username-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
 
-  if (username && password) {
+  if (password.length < 4) {
+    alert("Please choose a password with at least four characters.");
+  }
+  else if (username && password) {
     const response = await fetch("/api/users", {
       method: "post",
       body: JSON.stringify({
